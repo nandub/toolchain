@@ -43,6 +43,8 @@ if { [ info exists env(ARC_HOSTLINK_LIBRARY) ] } {
 # EM is default
 if { [string first "ARC700" "$multilib_opts"] == 0 } {
     set xarchflags "-a7"
+} elseif { [string first HS $multilib_opts] == 0 } {
+    set xarchflags "-av2hs"
 } else {
     set xarchflags "-av2em"
 }
